@@ -5,7 +5,11 @@ import 'package:flutter/cupertino.dart';
 typedef void PressOperationCallback(Number number);
 
 abstract class Number {
+
+  // 显示
   String display;
+
+  // 应用
   String apply(String original);
 }
 
@@ -98,6 +102,7 @@ class NumberButtonState extends State<NumberButton> {
         flex: 1,
         child: Padding(
           padding: widget.pad,
+          // 一个检测手势的widget
           child: GestureDetector(
             onTap: () {
               if (widget.onPress != null) {

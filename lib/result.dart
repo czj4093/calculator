@@ -13,6 +13,7 @@ class Result {
   num result;
 }
 
+// 结果按钮
 class ResultButton extends StatefulWidget {
   ResultButton({@required this.display, @required this.color, this.onPress});
   final String display;
@@ -65,6 +66,7 @@ class ResultButtonState extends State<ResultButton> {
   }
 }
 
+// 结果显示
 class ResultDisplay extends StatelessWidget {
   ResultDisplay({this.result});
   final String result;

@@ -29,6 +29,7 @@ class CalculatorState extends State<StatefulWidget> {
   List<Result> results = [];
   String currentDisplay = '0';
 
+  // 按下结果按钮
   onResultButtonPressed(display) {
     if (results.length > 0) {
       var result = results[results.length - 1];
@@ -42,6 +43,7 @@ class CalculatorState extends State<StatefulWidget> {
     pickCurrentDisplay();
   }
 
+  // 按下操作按钮
   onOperatorButtonPressed(Operator oper) {
     if (results.length > 0) {
       var result = results[results.length - 1];
@@ -57,6 +59,7 @@ class CalculatorState extends State<StatefulWidget> {
     pickCurrentDisplay();
   }
 
+  // 按下数字键
   onNumberButtonPressed(Number number) {
     var result = results.length > 0 ? results[results.length - 1] : Result();
     if (result.firstNum == null || result.oper == null) {
@@ -78,6 +81,7 @@ class CalculatorState extends State<StatefulWidget> {
     pickCurrentDisplay();
   }
 
+  // 选择当前显示
   pickCurrentDisplay() {
     this.setState(() {
       var display = '0';
@@ -106,9 +110,12 @@ class CalculatorState extends State<StatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
+    // 一个iOS风格的页面的基本布局结构。包含内容和导航栏
     return CupertinoPageScaffold(
+      // 一个拥有绘制、定位、调整大小的 widget
       child: Container(
           color: Colors.grey[100],
+          // 在垂直方向上排列子widget的列表
           child: Column(
             children: <Widget>[
               Expanded(

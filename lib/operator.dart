@@ -5,11 +5,18 @@ import 'package:flutter/cupertino.dart';
 typedef void PressOperationCallback(Operator oper);
 
 abstract class Operator {
+
+  // 显示
   String display;
+
+  // 颜色
   Color color;
+
+  // 计算
   num calculate(num first, num second);
 }
 
+// 加
 class AddOperator extends Operator {
   @override
   String get display => '+';
@@ -21,6 +28,7 @@ class AddOperator extends Operator {
   }
 }
 
+// 减
 class SubOperator extends Operator {
   @override
   String get display => '-';
@@ -32,6 +40,7 @@ class SubOperator extends Operator {
   }
 }
 
+// 乘
 class MultiOperator extends Operator {
   @override
   String get display => 'x';
@@ -43,6 +52,7 @@ class MultiOperator extends Operator {
   }
 }
 
+// 除
 class DivisionOperator extends Operator {
   @override
   String get display => '÷';
@@ -82,6 +92,7 @@ class OperatorGroup extends StatelessWidget {
   }
 }
 
+// 操作按钮
 class OperatorButton extends StatefulWidget {
   OperatorButton({@required this.oper, this.onPress})
       : assert(Operator != null);
